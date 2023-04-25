@@ -1,3 +1,101 @@
+@font-face {
+  font-family: "Gotham-Bold";
+  src: url("Gotham-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gotham-Black";
+  src: url("Gotham-Black.ttf") format("truetype");
+}
+
+body {
+  background-color: #990000;
+  font-family: "Gotham-Bold.ttf", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: maroon;
+  font-family: "Gotham-Bold", sans-serif;
+  height: 60px;
+  padding: 10px;
+}
+
+.logo {
+  height: 40px;
+  width: 10%;
+  background-color: clear;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px;
+  color: #FFD900;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: salmon;
+}
+
+nav ul li ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: none;
+  padding: 0;
+  margin: 0;
+  background-color: maroon;
+}
+
+nav ul li ul li {
+  width: 100%;
+}
+
+nav ul li ul li a {
+  padding: 10px;
+  color: #FFD900;
+}
+
+nav ul li:hover > a {
+  background-color: maroon;
+}
+
+nav ul li:hover > a + ul {
+  display: block;
+}
+
+nav ul li ul li:hover > a {
+  background-color: maroon;
+}
+
 @media only screen and (max-width : 600px ){
   /* Navbar */
   
@@ -39,4 +137,5 @@
   section {
     padding: 25px;
   }
+
 }
