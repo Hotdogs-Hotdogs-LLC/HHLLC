@@ -5,23 +5,9 @@
 <head>
 	<title>Hotdogs Hotdogs LLC</title>
 	<link rel="stylesheet" type="text/css" href="hhllc.css">
+	<script src="hamburger.js"></script>
 </head>
 <body>
-
-<script>
-const menuBtn = document.querySelector(".menu-btn");
-let menuOpen = false;
-menuBtn.addEventListener("click", () => {
-  if (!menuOpen) {
-    menuBtn.classList.add("open");
-    menuOpen = true;
-  } else {
-    menuBtn.classList.remove("open");
-    menuOpen = false;
-  }
-});
-
-</script>
 
 <nav>
     <div class="logo">
@@ -48,7 +34,6 @@ menuBtn.addEventListener("click", () => {
         <div class="menu-btn__burger"></div>
     </div>
 </nav>
-
 
 
 	<section>
