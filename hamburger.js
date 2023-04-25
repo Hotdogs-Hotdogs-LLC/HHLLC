@@ -1,10 +1,7 @@
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-const links = document.querySelectorAll('.nav-links li');
+const menuBtn = document.querySelector(".menu-btn");
+const navLinks = document.querySelector(".nav-links");
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    links.forEach(link => {
-        link.classList.toggle('fade');
-    });
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("open");
+  navLinks.classList.toggle("show");
 });
