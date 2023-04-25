@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Gotham-Bold";
-  src: url("fonts/Gotham-Bold.ttf") format("truetype");
+  src: url("Gotham-Bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Gotham-Black";
-  src: url("fonts/Gotham-Black.ttf") format("truetype");
+  src: url("Gotham-Black.ttf") format("truetype");
 }
 
 body {
