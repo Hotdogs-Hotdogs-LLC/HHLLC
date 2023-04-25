@@ -40,15 +40,6 @@ nav ul {
   padding: 0;
 }
 
-nav ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
 nav ul li {
   position: relative;
 }
@@ -96,11 +87,14 @@ nav ul li ul li:hover > a {
   background-color: maroon;
 }
 
-@media only screen and (max-width : 600px ){
+@media only screen and (max-width: 600px) {
   /* Navbar */
-  
   nav {
     flex-wrap: wrap;
+  }
+
+  .logo {
+    margin-right: auto;
   }
 
   nav ul {
@@ -114,28 +108,48 @@ nav ul li ul li:hover > a {
   nav ul li {
     display: block;
     margin: 0;
+    position: relative;
   }
 
   nav ul li a {
     display: block;
     padding: 20px;
     text-align: center;
+    position: relative;
+    z-index: 1;
+    color: #FFD900;
+  }
+
+  nav ul li:hover > a {
+    background-color: maroon;
   }
 
   nav ul li ul {
-    position: static;
-    display: none;
+    background-color: maroon;
+    display: block;
     margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
   }
 
-
-  nav .logo {
-    margin-right: auto;
+  nav ul li ul li {
+    width: 100%;
   }
 
+  nav ul li ul li a {
+    color: #FFD900;
+    padding: 10px;
+  }
+
+  nav ul li ul li:hover > a {
+    background-color: maroon;
+  }
+  
   /* Sections */
   section {
     padding: 25px;
   }
-
 }
