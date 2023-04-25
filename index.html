@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+<head>
+	<title>Hotdogs Hotdogs LLC</title>
+	<link rel="stylesheet" type="text/css" href="hhllc.css">
+</head>
+	<style>
+				body {
+			background-color: #990000;
+			font-family: Gotham-Bold, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			color: #800000;
+			margin: 100px auto 50px;
+			text-align: center;
+		}
+		section {
+			background-color: #990000;
+			padding: 50px;
+		}
+      /* Slides */
+      .slides {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .slides::-webkit-scrollbar {
+        display: none;
+      }
+      .slide {
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        width: 100%;
+        height: 400px;
+        background-color: #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 72px;
+        color: #fff;
+      }
+      .slide:nth-child(odd) {
+        background-color: #333;
+      }
+      
+      /* Buttons */
+      .slider-wrapper {
+        position: relative;
+      }
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        transition: background-color 0.5s;
+      }
+      .slider-btn:hover {
+        background-color: rgba(255, 255, 255, 1);
+      }
+      .slider-btn:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        background-color: #333;
+        border-radius: 50%;
+      }
+      .slider-btn.prev {
+        left: 20px;
+      }
+      .slider-btn.next {
+        right: 20px;
+      }
+    </style>
+<body>
+	<nav>
+		<div class="logo">
+			<a href="index.html">
+				<img src="Images/hhllc logo.png" width="100px" alt="HHLLC"/>
+			</a>
+		</div>
+		<ul>
+			<li><a href="under construction.html">LOCATION</a></li>
+			<li>
+				<a href="under construction.html">MEDIA</a>
+				<ul>
+					<li><a href="under construction.html">VIDEOS</a></li>
+					<li><a href="under construction.html">MUSIC</a></li>
+				</ul>
+			</li>
+			<li><a href="under construction.html">MERCH</a></li>
+			<li><a href="under construction.html">ADVERTISING</a></li>
+			<li><a href="under construction.html">GIRLS</a></li>
+			<li><a href="under construction.html">CAREERS</a></li>
+			<li><a href="under construction.html">INVESTORS</a></li>
+		</ul>
+	</nav>
+	 <div class="slider-wrapper">
+      <div class="slides">
+        <div class="slide"><img src="web resources/web music/weinerandtheweinies.png" width="100%" alt=""/></div>
+        <div class="slide"><img src="Images/roadside.jpg" width="100%" alt=""/></div>
+        <div class="slide"><img src="web resources/hhllc google listing-01.png" width="100%" alt=""/></div>
+        <div class="slide"><img src="Images/PAGE UNDER CONST-02.png" width="100%" alt=""/></div>
+      </div>
+      <button class="slider-btn prev">&#8249;</button>
+      <button class="slider-btn next">&#8250;</button>
+    </div>
+
+    <script>
+      const slides = document.querySelectorAll('.slide');
+      const slider = document.querySelector('.slides');
+      const prevBtn = document.querySelector('.prev');
+      const nextBtn = document.querySelector('.next');
+      let currentSlide = 0;
+      const slideWidth = slides[currentSlide].clientWidth;
+      
+      // Clone first and last slide for infinite loop
+      const firstSlide = slides[0];
+      const lastSlide = slides[slides.length - 1];
+      const cloneFirst = firstSlide.cloneNode(true);
+      const cloneLast = lastSlide.cloneNode(true);
+      slider.appendChild(cloneFirst);
+      slider.insertBefore(cloneLast, firstSlide);
+      
+      // Reset slide position to first slide
+      slider.scrollLeft = slideWidth;
+      
+      // Add event listeners
+      prevBtn.addEventListener('click', () => {
+        slider.scrollBy({
+          left: -slideWidth,
+          behavior: 'smooth'
+        });
+        currentSlide--;
+        if (currentSlide < 0) {
+          currentSlide = slides.length - 1;
+          slider
+	</script>
+</body>
+</html>
