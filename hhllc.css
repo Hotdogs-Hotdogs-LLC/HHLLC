@@ -15,6 +15,61 @@ body {
   padding: 0;
 }
 
+/* Hamburger Icon */
+.menu-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.menu-btn__burger {
+  width: 20px;
+  height: 2px;
+  background-color: #FFD900;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #FFD900;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-btn__burger::before {
+  transform: translateY(-7px);
+}
+
+.menu-btn__burger::after {
+  transform: translateY(7px);
+}
+
+/* Hamburger Icon Animation */
+.menu-btn.open .menu-btn__burger {
+  transform: rotate(45deg);
+  background-color: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
 nav {
   display: flex;
   justify-content: space-between;
