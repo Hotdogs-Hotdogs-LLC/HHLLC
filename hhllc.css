@@ -146,6 +146,8 @@ body {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+}
+
 
 nav {
   display: flex;
