@@ -1,34 +1,126 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-<head> 
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <meta charset="UTF-8"> 
-    <title>Hotdogs Hotdogs LLC</title> 
-	<link rel="stylesheet" type="text/css" href="hhllc.css"> 
-</head>
-<body> 
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<title>Hotdogs Hotdogs LLC</title>
+	<link rel="stylesheet" type="text/css" href="hhllc.css">
+	<style>
+	/* Navbar container */
+	.navbar {
+	  overflow: hidden;
+	  background-color: #333;
+	  font-family: Arial, sans-serif;
+	}
 
-<nav> 
-    <div class="logo"> 
-        <a href="index.html"> 
-            <img src="hhllc logo.png" width="100px" alt="HHLLC"/> 
-        </a> 
+	/* Links inside the navbar */
+	.navbar a {
+	  float: left;
+	  display: block;
+	  color: #f2f2f2;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	  font-size: 17px;
+	}
+
+	/* The dropdown container */
+	.dropdown {
+	  float: left;
+	  overflow: hidden;
+	}
+
+	/* Dropdown button */
+	.dropdown .dropbtn {
+	  font-size: 17px;
+	  border: none;
+	  outline: none;
+	  color: #f2f2f2;
+	  padding: 14px 16px;
+	  background-color: inherit;
+	  font-family: inherit;
+	  margin: 0;
+	}
+
+	/* Dropdown content (hidden by default) */
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: #f9f9f9;
+	  min-width: 160px;
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  z-index: 1;
+	}
+
+	/* Links inside the dropdown */
+	.dropdown-content a {
+	  float: none;
+	  color: black;
+	  padding: 12px 16px;
+	  text-decoration: none;
+	  display: block;
+	  text-align: left;
+	}
+
+	/* Add a grey background color to dropdown links on hover */
+	.dropdown-content a:hover {
+	  background-color: #ddd;
+	}
+
+	/* Show the dropdown menu on hover */
+	.dropdown:hover .dropdown-content {
+	  display: block;
+	}
+
+	/* Change the background color of the navbar on mobile screens */
+	@media screen and (max-width: 600px) {
+	  .navbar {
+	    background-color: #333;
+	    overflow: hidden;
+	  }
+	  /* Hide the navigation links */
+	  .navbar a {
+	    display: none;
+	  }
+	  /* Dropdown container */
+	  .dropdown {
+	    float: none;
+	  }
+	  /* Display the dropdown content */
+	  .dropdown-content {
+	    display: block;
+	  }
+	  /* Add a grey background color to dropdown links on hover */
+	  .dropdown-content a:hover {
+	    background-color: #ddd;
+	  }
+	}
+	</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <div class="logo">
+    <a href="index.html">
+      <img src="hhllc logo.png" width="100px" alt="HHLLC"/>
+    </a>
+  </div>
+  <a href="under construction.html">LOCATION</a>
+  <div class="dropdown">
+    <button class="dropbtn">MEDIA 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="under construction.html">VIDEOS</a>
+      <a href="under construction.html">MUSIC</a>
     </div>
-    <ul class="nav-links"> 
-        <li><a href="under construction.html">LOCATION</a></li> 
-        <li> 
-            <a href="under construction.html">MEDIA</a> 
-            <ul> 
-                <li><a href="under construction.html">VIDEOS</a></li> 
-                <li><a href="under construction.html">MUSIC</a></li> 
-            </ul> 
-        </li>
-        <li><a href="under construction.html">MERCH</a></li> 
-        <li><a href="under construction.html">ADVERTISING</a></li> 
-        <li><a href="under construction.html">CONTACT</a></li> 
-        <li><a href="under construction.html">CAREERS</a></li> 
-        <li><a href="under construction.html">INVESTORS</a></li> 
-    </ul> 
+  </div> 
+  <a href="under construction.html">MERCH</a>
+  <a href="under construction.html">ADVERTISING</a>
+  <a href="under construction.html">CONTACT</a> 
+  <a href="under construction.html">CAREERS</a> 
+  <a href="under construction.html">INVESTORS</a> 
 </nav> 
 
 
