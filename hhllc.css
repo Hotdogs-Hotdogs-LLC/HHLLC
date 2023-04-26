@@ -91,8 +91,6 @@ body {
   }
 }
 
-
-/* Hamburger Icon */
 .menu-btn {
   display: flex;
   justify-content: center;
@@ -132,7 +130,7 @@ body {
   transform: translateY(7px);
 }
 
-/* Hamburger Icon Animation */
+
 .menu-btn.open .menu-btn__burger {
   transform: rotate(45deg);
   background-color: transparent;
@@ -145,10 +143,7 @@ body {
 .menu-btn.open .menu-btn__burger::after {
   transform: rotate(-45deg) translate(5px, -5px);
 }
-
-}
-
-
+  
 nav {
   display: flex;
   justify-content: space-between;
@@ -222,7 +217,7 @@ nav ul li ul li:hover > a {
 }
 
 @media only screen and (max-width: 600px) {
-  /* Navbar */
+  
   nav {
     flex-wrap: wrap;
   }
@@ -282,7 +277,7 @@ nav ul li ul li:hover > a {
     background-color: maroon;
   }
   
-  /* Sections */
+  
   section {
     padding: 25px;
   }
