@@ -1,54 +1,75 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <head> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta charset="UTF-8"> 
+        <title>Hotdogs Hotdogs LLC</title> 
+        <link rel="stylesheet" type="text/css" href="hhllc.css"> 
+    </head>
+    <body> 
 
-<head>
-	<title>Hotdogs Hotdogs LLC</title>
-	<link rel="stylesheet" type="text/css" href="hhllc.css">
-	<style>
-		body {
-			background-color: #990000;
-			font-family: Gotham-Bold, sans-serif;
-			margin: 0;
-			padding: 0;
-		}
-		h1 {
-			color: #800000;
-			margin: 100px auto 50px;
-			text-align: center;
-		}
-		section {
-			background-color: #990000;
-			padding: 50px;
-		}
-	</style>
-</head>
-	
-<body>
-	<nav>
-		<div class="logo">
-			<a href="index.html">
-				<img src="hhllc logo.png" width="100px" alt="HHLLC"/>
-			</a>
-		</div>
-		<ul>
-			<li><a href="#">LOCATION</a></li>
-			<li>
-				<a href="#">MEDIA</a>
-				<ul>
-					<li><a href="#">VIDEOS</a></li>
-					<li><a href="#">MUSIC</a></li>
-				</ul>
-			</li>
-			<li><a href="#">MERCH</a></li>
-			<li><a href="#">ADVERTISING</a></li>
-			<li><a href="#">CONTACT</a></li>
-			<li><a href="#">CAREERS</a></li>
-			<li><a href="#">INVESTORS</a></li>
-		</ul>
-	</nav>
-</body>
-	
-	
-<img src="PAGE UNDER CONST-02.png" width="100%" alt=""/>
-</html>
+        <nav> 
+            <div class="logo"> 
+                <a href="index.html"> 
+                    <img src="hhllc logo.png" width="100" alt="HHLLC"> 
+                </a> 
+            </div>
+            <ul id="nav-links"> 
+                <li><a href="under construction.html">LOCATION</a></li> 
+                <li> 
+                    <a id="sub_opener">MEDIA</a> 
+                    <ul id="sub_menu"> 
+                        <li><a href="under construction.html">VIDEOS</a></li> 
+                        <li><a href="under construction.html">MUSIC</a></li> 
+                    </ul> 
+                </li>
+                <li><a href="under construction.html">MERCH</a></li> 
+                <li><a href="under construction.html">ADVERTISING</a></li> 
+                <li><a href="under construction.html">CONTACT</a></li> 
+                <li><a href="under construction.html">CAREERS</a></li> 
+                <li><a href="under construction.html">INVESTORS</a></li> 
+            </ul>
+
+            <img id="menu" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu" src="hotdog.png" alt="">
+
+        </nav> 
+
+        <section> 
+            <img src="PAGE UNDER CONST-02.png" width="100%" alt=""/>
+        </section> 
+
+        <script>
+
+            function toggle_submenu() {
+                var x = document.getElementById("sub_menu");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+
+            function toggle_menu() {
+                var x = document.getElementById("nav-links");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                    document.getElementById("sub_menu").style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+
+            const hamMenu = document.querySelector('#menu');
+            hamMenu.addEventListener('click', () => {
+                toggle_menu();
+            });
+
+            const subMenu = document.querySelector('#sub_opener');
+            subMenu.addEventListener('click', () => {
+                toggle_submenu();
+            });
+
+        </script>
+
+    </body> 
+</html> 
