@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html>
+    <head> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta charset="UTF-8"> 
+        <title>Hotdogs Hotdogs LLC</title> 
+        <link rel="stylesheet" type="text/css" href="hhllc.css"> 
+    </head>
+    <body> 
+
+        <nav> 
+            <div class="logo"> 
+                <a href="index.html"> 
+                    <img src="hhllc logo.png" width="100" alt="HHLLC"> 
+                </a> 
+            </div>
+            <ul id="nav-links"> 
+                <li><a href="location.html">LOCATION</a></li> 
+                <li> 
+                    <a id="sub_opener">MEDIA</a> 
+                    <ul id="sub_menu"> 
+                        <li><a href="videos.html">VIDEOS</a></li> 
+                        <li><a href="music.html">MUSIC</a></li> 
+                    </ul> 
+                </li>
+                <li><a href="merch.html">MERCH</a></li> 
+                <li><a href="advertising.html">ADVERTISING</a></li> 
+                <li><a href="contact.html">CONTACT</a></li> 
+                <li><a href="careers.html">CAREERS</a></li> 
+                <li><a href="investors.html">INVESTORS</a></li> 
+            </ul>
+
+            <img id="menu" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu" src="hotdog.png" alt="">
+
+        </nav> 
+
+        <section> 
+            <img src="PAGE UNDER CONST-02.png" width="100%" alt=""/>
+        </section> 
+
+        <script>
+
+            function toggle_submenu() {
+                var x = document.getElementById("sub_menu");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+
+            function toggle_menu() {
+                var x = document.getElementById("nav-links");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                    document.getElementById("sub_menu").style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+
+            const hamMenu = document.querySelector('#menu');
+            hamMenu.addEventListener('click', () => {
+                toggle_menu();
+            });
+
+            const subMenu = document.querySelector('#sub_opener');
+            subMenu.addEventListener('click', () => {
+                toggle_submenu();
+            });
+
+        </script>
+
+    </body> 
+</html> 
