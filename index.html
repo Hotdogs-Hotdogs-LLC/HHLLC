@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html>
+    <head> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta charset="UTF-8"> 
+        <title>Hotdogs Hotdogs LLC</title> 
+        <link rel="stylesheet" type="text/css" href="hhllc.css"> 
+    </head>
+    <body> 
+
+        <nav> 
+            <div class="logo"> 
+                <a href="index.html"> 
+                    <img src="hhllc logo.png" width="100" alt="HHLLC"> 
+                </a> 
+            </div>
+            <ul id="nav-links"> 
+                <li><a href="under construction.html">LOCATION</a></li> 
+                <li> 
+                    <a id="sub_opener">MEDIA</a> 
+                    <ul id="sub_menu"> 
+                        <li><a href="under construction.html">VIDEOS</a></li> 
+                        <li><a href="under construction.html">MUSIC</a></li> 
+                    </ul> 
+                </li>
+                <li><a href="under construction.html">MERCH</a></li> 
+                <li><a href="under construction.html">ADVERTISING</a></li> 
+                <li><a href="under construction.html">CONTACT</a></li> 
+                <li><a href="under construction.html">CAREERS</a></li> 
+                <li><a href="under construction.html">INVESTORS</a></li> 
+            </ul>
+
+            <img id="menu" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu" src="hotdog.png" alt="">
+
+        </nav> 
+
+        <section> 
+            <h1> This is a test</h1> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Morbi vitae neque eleifend, maximus mi sit amet, semper enim. Nulla facilisi. 
+            Donec vulputate euismod sagittis. Nunc et leo massa. Nullam a dictum augue, at semper quam. 
+            Nunc in mi quis dolor lacinia venenatis. Praesent aliquet at nisl eget ornare. 
+            Etiam quis scelerisque quam.
+            <br><br><br>
+            Sed ut porttitor velit. Mauris iaculis metus neque, a faucibus odio congue a. 
+            Curabitur nec sollicitudin lorem. 
+            Nam malesuada rhoncus purus, cursus tristique sapien fermentum nec. 
+            Duis nec lacus elit. Fusce condimentum dolor ac tellus interdum consequat. 
+            Aenean bibendum orci posuere iaculis consectetur.
+        </section> 
+
+        <script>
+
+            function toggle_submenu() {
+                var x = document.getElementById("sub_menu");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+
+            function toggle_menu() {
+                var x = document.getElementById("nav-links");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                    document.getElementById("sub_menu").style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+
+            const hamMenu = document.querySelector('#menu');
+            hamMenu.addEventListener('click', () => {
+                toggle_menu();
+            });
+
+            const subMenu = document.querySelector('#sub_opener');
+            subMenu.addEventListener('click', () => {
+                toggle_submenu();
+            });
+
+        </script>
+
+    </body> 
+</html> 
