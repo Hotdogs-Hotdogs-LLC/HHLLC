@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html>
+    <head> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta charset="UTF-8"> 
+        <title>Hotdogs Hotdogs LLC</title> 
+        <link rel="stylesheet" type="text/css" href="hhllc.css"> 
+	    <style>
+.button {
+  background-color: #bd202e;
+  color: yellow;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #800000;
+}
+</style>
+<style>
+h1 {text-align: center;}
+p {text-align: left;}
+div {text-align: center;}
+</style>
+    </head>
+    <body> 
+
+        <nav> 
+            <div class="logo"> 
+                <a href="index.html"> 
+                    <img src="hhllc logo.png" width="100" alt="HHLLC"> 
+                </a> 
+            </div>
+            <ul id="nav-links"> 
+                <li><a href="location.html">LOCATION</a></li> 
+                <li> 
+                    <a id="sub_opener">MEDIA</a> 
+                    <ul id="sub_menu"> 
+                        <li><a href="videos.html">VIDEOS</a></li> 
+                        <li><a href="music.html">MUSIC</a></li> 
+                    </ul> 
+                </li>
+                <li><a href="merch.html">MERCH</a></li> 
+                <li><a href="advertising.html">ADVERTISING</a></li> 
+                <li><a href="contact.html">CONTACT</a></li> 
+                <li><a href="careers.html">CAREERS</a></li> 
+                <li><a href="investors.html">INVESTORS</a></li> 
+            </ul>
+
+            <img id="menu" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu" src="hotdog.png" alt="">
+
+        </nav> 
+	  
+        <h1> MANAGER </h1>
+	    
+	<p>
+Job Title:
+
+Hotdog Cart Sales Associate
+
+Job Description:
+
+We are looking for two friendly and outgoing sales associates to join our company. The ideal candidate will have excellent customer service skills, be comfortable working in an outdoor environment, and be willing to wear a bikini while working.
+
+Responsibilities:
+
+Sell hotdogs to customers
+Handle cash transactions
+Maintain a clean and organized workspace
+Ensure customer satisfaction by providing excellent service
+Adhere to health and safety regulations
+
+Qualifications:
+
+High school diploma or equivalent
+Ability to interact with customers in a friendly and professional manner
+Comfortable working in a potentially hot and outdoor environment
+Willingness to wear a bikini while working
+Availability to work on weekends or during special events
+
+Compensation:
+
+Employees will be compensated with 20-25% of the daily profits each as well as customer gratuity payments.
+
+
+Please respond by email with your resume, name, phone number and availability.
+
+We are an equal opportunity employer and welcome applicants of all genders, races, and backgrounds.</p>
+	    
+	    <div> 
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScqy3n33Sm6137_XK0G0xg8yoYJHgRChtj0j6ZWif-BEhA3Qg/viewform?usp=sf_link" target="_blank" class="button">APPLY NOW</a>
+	    </div>
+	<p>If you're passionate about food and enjoy working in a fast-paced environment, we want to hear from you!
+        </br>
+        Both positions require excellent customer service skills, willingness to work in a bikini and the ability to work well in a team.</p>
+
+
+        <script>
+
+            function toggle_submenu() {
+                var x = document.getElementById("sub_menu");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+
+            function toggle_menu() {
+                var x = document.getElementById("nav-links");
+                if (x.style.display === "block") {
+                    x.style.display = "none";
+                    document.getElementById("sub_menu").style.display = "none";
+                } else {
+                    x.style.display = "block";
+                }
+            }
+
+            const hamMenu = document.querySelector('#menu');
+            hamMenu.addEventListener('click', () => {
+                toggle_menu();
+            });
+
+            const subMenu = document.querySelector('#sub_opener');
+            subMenu.addEventListener('click', () => {
+                toggle_submenu();
+            });
+
+        </script>
+
+    </body> 
+</html> 
