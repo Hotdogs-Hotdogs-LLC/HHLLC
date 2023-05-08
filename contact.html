@@ -36,6 +36,54 @@ ul {text-align: center;}
   margin-right: auto;
 }
         </style>
+        <style>
+    /* Common styles for both desktop and mobile */
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .center table {
+        max-width: 600px;
+        border-collapse: collapse;
+    }
+
+    .center td {
+        padding: 5px;
+        text-align: center;
+    }
+
+    .center td a {
+        display: block;
+    }
+
+    .center td img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* Styles for desktop layout */
+    @media screen and (min-width: 768px) {
+        .center table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+    }
+
+    /* Styles for mobile layout */
+    @media screen and (max-width: 767px) {
+        .center table {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+        }
+    }
+</style>
+
     </head>
     <body> 
 
@@ -76,42 +124,45 @@ ul {text-align: center;}
     </p>
     </br>
     <h1>CONNECT WITH US</h1>
-    <table class="center" width="25%">
-            <tr>
-                <td>
-                    <a href="https://www.instagram.com/hotdogshotdogsllc/" target="_blank">
-                        <img src="ig.png">
-                    </a>
-                </td>
-                <td>
-                    <a href="https://www.youtube.com/@hotdogshotdogsllc/" target="_blank">
-                        <img src="yt.png">
-                    </a>
-                </td>
-                <td>
-                    <a href="https://vimeo.com/hotdogshotdogsllc" target="_blank">
-                        <img src="vimeo.png">
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="https://twitter.com/Hotdogs_Hotdogs" target="_blank">
-                        <img src="tw.png">
-                    </a>
-                </td>
-                <td>
-                    <a href="https://www.facebook.com/hotdogshotdogsllc" target="_blank">
-                        <img src="fb.png">
-                    </a>
-                </td>
-                <td>
-                    <a href="https://t.snapchat.com/pyXzFWuU">
-                        <img src="sc.png">
-                    </a>
-                </td>
-            </tr>
-        </table>
+    <table class="center">
+    <tr>
+        <td>
+            <a href="https://www.instagram.com/hotdogshotdogsllc/" target="_blank">
+                <img src="ig.png">
+            </a>
+        </td>
+        <td>
+            <a href="https://www.youtube.com/@hotdogshotdogsllc/" target="_blank">
+                <img src="yt.png">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="https://vimeo.com/hotdogshotdogsllc" target="_blank">
+                <img src="vimeo.png">
+            </a>
+        </td>
+        <td>
+            <a href="https://twitter.com/Hotdogs_Hotdogs" target="_blank">
+                <img src="tw.png">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="https://www.facebook.com/hotdogshotdogsllc" target="_blank">
+                <img src="fb.png">
+            </a>
+        </td>
+        <td>
+            <a href="https://t.snapchat.com/pyXzFWuU">
+                <img src="sc.png">
+            </a>
+        </td>
+    </tr>
+</table>
+
     
 
         <script>
