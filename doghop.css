@@ -1,0 +1,74 @@
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #game-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: #800000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: sans-serif;
+        }
+
+        #game-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #game {
+            position: relative;
+            width: 500px;
+            height: 150px;
+            border: 1px solid #FFD900;
+            background: #EB2625;
+        }
+
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 18px;
+            color: #FFFFFF;
+        }
+
+        #doghop {
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+            width: 18px;
+            height: 50px;
+            background: url('run1.png') no-repeat center;
+            background-size: contain;
+            animation: walk 0.5s steps(3) infinite;
+        }
+
+        @keyframes walk {
+            0% {
+                background-image: url('run1.png');
+            }
+            33% {
+                background-image: url('run2.png');
+            }
+            66% {
+                background-image: url('run3.png');
+            }
+            100% {
+                background-image: url('run1.png');
+            }
+        }
+
+        .obstacle {
+            position: absolute;
+            bottom: 0;
+            width: 20px;
+            height: 20px;
+            background: url('obstacle.png') no-repeat center;
+            background-size: contain;
+        }
+    
