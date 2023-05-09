@@ -18,6 +18,9 @@ let flyTimerId;
 // Adjust the game container's CSS display and background-color properties
 gameContainer.style.backgroundColor = 'black';
 
+// Adjust the game container's CSS display property
+gameContainer.style.display = 'none';
+
 // Define the start button
 const startButton = document.getElementById('start-button');
 
