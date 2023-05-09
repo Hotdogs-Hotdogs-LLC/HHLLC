@@ -31,6 +31,9 @@ function startGame() {
 // Event listener for start button click
 startButton.addEventListener('click', startGame);
 
+// Adjust the game container's CSS display property
+gameContainer.style.display = 'none';
+
 
 // Function to make the doghop jump
 function jump() {
