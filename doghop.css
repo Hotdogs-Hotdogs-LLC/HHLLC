@@ -17,6 +17,9 @@
             font-family: sans-serif;
             color: #ffffff;
         }
+#game-container.hidden {
+  display: none;
+}
 
         #game-container h1 {
             font-size: 24px;
