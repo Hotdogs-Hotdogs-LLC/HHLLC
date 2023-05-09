@@ -8,34 +8,24 @@ let isGameOver = false;
 let isCrouching = false;
 let doghopBottom = 0;
 let gravity = 5;
-let obstacleTimerId;
 let flyTimerId;
 
 gameContainer.style.backgroundColor = 'black';
-
 gameContainer.style.display = 'none';
 
 const startButton = document.getElementById('start-button');
 
 function startGame() {
-    if (isGameOver) return;
+  if (isGameOver) return;
 
-   
-    startScreen.style.display = 'none';
+  startScreen.style.display = 'none';
+  gameContainer.style.display = 'flex';
 
-   
-    gameContainer.style.display = 'flex';
-
-    moveObstacle();
-    
-       
-    moveFlyObstacle();
+  moveObstacle();
+  moveFlyObstacle();
 }
 
 startButton.addEventListener('click', startGame);
-
-gameContainer.style.display = 'none';
-
 
 function jump() {
   if (isJumping || isCrouching) return;
@@ -114,7 +104,7 @@ function moveFlyObstacle() {
   flyObstacle.style.left = flyObstacleLeft + 'px';
   gameContainer.appendChild(flyObstacle);
 
-  let flyInterval = setInterval(function () {
+    let flyInterval = setInterval(function () {
     if (flyObstacleLeft < -50) {
       clearInterval(flyInterval);
       flyObstacle.remove();
@@ -135,7 +125,6 @@ function moveFlyObstacle() {
 }
 
 function gameOver() {
-  clearInterval(obstacleTimerId);
   clearTimeout(flyTimerId);
   isGameOver = true;
   replayButton.style.display = 'block';
