@@ -5,7 +5,6 @@ const gameContainer = document.getElementById('game-container');
 const doghop = document.getElementById('doghop');
 const replayButton = document.getElementById('replay-button');
 const startScreen = document.getElementById('start-screen');
-const startButton = document.getElementById('start-button');
 
 // Adjust the game container's CSS display and background-color properties
 gameContainer.style.display = 'none';
@@ -20,6 +19,10 @@ let doghopBottom = 0;
 let gravity = 5;
 let obstacleTimerId;
 let flyTimerId;
+
+
+// Define the start button
+const startButton = document.getElementById('start-button');
 
 // Function to start the game
 function startGame() {
