@@ -16,7 +16,6 @@ let obstacleTimerId;
 let flyTimerId;
 
 // Adjust the game container's CSS display and background-color properties
-gameContainer.style.display = 'none';
 gameContainer.style.backgroundColor = 'black';
 
 // Define the start button
