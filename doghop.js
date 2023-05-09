@@ -17,11 +17,20 @@ let flyTimerId;
 
 // Function to start the game
 function startGame() {
-  startScreen.style.display = 'none';
-  resetGame();
-  obstacleTimerId = setInterval(moveObstacle, 20);
-  moveFlyObstacle();
+    if (isGameOver) return;
+
+    // Hide the start screen
+    startScreen.style.display = 'none';
+
+    // Show the game container
+    gameContainer.style.display = 'flex';
+
+    moveObstacle();
 }
+
+// Event listener for start button click
+startButton.addEventListener('click', startGame);
+
 
 // Function to make the doghop jump
 function jump() {
