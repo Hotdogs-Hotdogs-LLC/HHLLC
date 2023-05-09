@@ -33,6 +33,9 @@ function startGame() {
     gameContainer.style.display = 'flex';
 
     moveObstacle();
+    
+        // Move the flying obstacle
+    moveFlyObstacle();
 }
 
 // Event listener for start button click
