@@ -100,7 +100,7 @@ function moveFlyObstacle() {
 
   const flyObstacle = document.createElement('div');
   flyObstacle.classList.add('fly-obstacle');
-  flyObstacle.style.top = flyObstacleTop + 'px
+  flyObstacle.style.top = flyObstacleTop + 'px';
   flyObstacle.style.left = flyObstacleLeft + 'px';
   gameContainer.appendChild(flyObstacle);
 
@@ -108,17 +108,7 @@ function moveFlyObstacle() {
     if (flyObstacleLeft < -50) {
       clearInterval(flyInterval);
       flyObstacle.remove();
-    } else if (
-      flyObstacleLeft > 0 &&
-      flyObstacleLeft < 50 &&
-      doghopBottom < flyObstacleTop + 150 &&
-      !isCrouching
-    ) {
-      gameOver();
-    } else {
-      flyObstacleLeft -= 5;
-      flyObstacle.style.left = flyObstacleLeft + 'px';
-    }
+    } else
   }, 20);
 
   flyTimerId = setTimeout(moveFlyObstacle, Math.random() * 3000 + 2000);
