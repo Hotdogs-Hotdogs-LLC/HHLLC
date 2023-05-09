@@ -5,6 +5,12 @@ const gameContainer = document.getElementById('game-container');
 const doghop = document.getElementById('doghop');
 const replayButton = document.getElementById('replay-button');
 const startScreen = document.getElementById('start-screen');
+const startButton = document.getElementById('start-button');
+
+// Adjust the game container's CSS display and background-color properties
+gameContainer.style.display = 'none';
+gameContainer.style.backgroundColor = 'black';
+
 
 // Initialize game variables
 let isJumping = false;
