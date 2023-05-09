@@ -9,8 +9,7 @@ let isCrouching = false;  // Flag to track if the dog is currently crouching
 let doghopBottom = 0;  // Initial position of the dog
 let flyTimerId;  // Timer ID for fly obstacles
 
-gameContainer.style.backgroundColor = 'black';  // Set the background color of the game container
-gameContainer.style.display = 'none';  // Hide the game container initially
+gameContainer.classList.add('hidden'); // Instead of gameContainer.style.display = 'none';
 
 const startButton = document.getElementById('start-button');  // Get the start button element
 
