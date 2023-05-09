@@ -1,129 +1,104 @@
- // JavaScript code
+// JavaScript code
 
-        // Get references to game elements
-        const startScreen = document.getElementById('start-screen');
-        const replayButton = document.getElementById('replay-button');
-        const gameContainer = document.getElementById('game-container');
-        const doghop = document.getElementById('doghop');
+// Get references to game elements
+const gameContainer = document.getElementById('game-container');
+const doghop = document.getElementById('doghop');
+const replayButton = document.getElementById('replay-button');
 
-        // Initialize game variables
-        let isJumping = false;
-        let is
-        let isCrouching = false;
-        let isGameOver = false;
-        let doghopBottom = 0;
-        let gravity = 5;
-        let obstacleTimerId;
-        let score = 0;
+// Initialize game variables
+let isJumping = false;
+let isGameOver = false;
+let isCrouching = false;
+let doghopBottom = 0;
+let gravity = 5;
+let obstacleTimerId;
+let flyTimerId;
 
-        // Function to make the doghop jump
-        function jump() {
-            if (isJumping) return;
+// Function to make the doghop jump
+function jump() {
+  if (isJumping || isCrouching) return;
 
-            isJumping = true;
-            let jumpInterval = setInterval(function () {
-                if (doghopBottom >= 100) {
-                    clearInterval(jumpInterval);
-                    let fallInterval = setInterval(function () {
-                        if (doghopBottom <= 0) {
-                            clearInterval(fallInterval);
-                            isJumping = false;
-                        } else {
-                            doghopBottom -= 2;
-                            doghop.style.bottom = doghopBottom + 'px';
-                        }
-                    }, 10);
-                } else {
-                    doghopBottom += 8;
-                    doghop.style.bottom = doghopBottom + 'px';
-                }
-            }, 10);
+  isJumping = true;
+  let jumpInterval = setInterval(function () {
+    if (doghopBottom >= 100) {
+      clearInterval(jumpInterval);
+      let fallInterval = setInterval(function () {
+        if (doghopBottom <= 0) {
+          clearInterval(fallInterval);
+          isJumping = false;
+        } else {
+          doghopBottom -= 2;
+          doghop.style.bottom = doghopBottom + 'px';
         }
+      }, 10);
+    } else {
+      doghopBottom += 8;
+      doghop.style.bottom = doghopBottom + 'px';
+    }
+  }, 10);
+}
 
-        // Function to make the doghop crouch
-        function crouch() {
-            if (isCrouching) return;
+// Function to make the doghop crouch
+function crouch() {
+  if (isJumping) return;
 
-            isCrouching = true;
-            doghop.classList.add('crouching');
+  if (!isCrouching) {
+    isCrouching = true;
+    doghop.style.width = '25px';
+    doghop.style.height = '25px';
+    doghop.style.backgroundImage = "url('crouch.png')";
+    doghop.style.animation = 'none';
+  } else {
+    isCrouching = false;
+    doghop.style.width = '50px';
+    doghop.style.height = '50px';
+    doghop.style.backgroundImage = "url('run1.png')";
+    doghop.style.animation = 'walk 0.5s steps(3) infinite';
+  }
+}
 
-            setTimeout(function () {
-                doghop.classList.remove('crouching');
-                isCrouching = false;
-            }, 1000); // Adjust crouching duration as needed
-        }
+// Function to move the flying obstacle
+function moveFlyObstacle() {
+  let flyObstacleTop = Math.random() * (window.innerHeight - 150);
+  let flyObstacleLeft = window.innerWidth;
 
-        // Function to move the obstacles
-        function moveObstacle() {
-            let initialDelay = Math.random() * 4000 + 2000;
-            obstacleTimerId = setTimeout(function () {
-                createObstacle();
-                moveObstacle();
-            }, initialDelay);
-        }
+  const flyObstacle = document.createElement('div');
+  flyObstacle.classList.add('fly-obstacle');
+  flyObstacle.style.top = flyObstacleTop + 'px';
+  flyObstacle.style.left = flyObstacleLeft + 'px';
+  gameContainer.appendChild(flyObstacle);
 
-        // Function to create an obstacle
-        function createObstacle() {
-            const newObstacle = document.createElement('div');
-            newObstacle.classList.add('obstacle');
-            newObstacle.style.left = '500px';
+  let flyInterval = setInterval(function () {
+    if (flyObstacleLeft < -50) {
+      clearInterval(flyInterval);
+      flyObstacle.remove();
+    } else if (
+      flyObstacleLeft > 0 &&
+      flyObstacleLeft < 50 &&
+      doghopBottom < flyObstacleTop + 150
+    ) {
+      gameOver();
+    } else {
+      flyObstacleLeft -= 5;
+      flyObstacle.style.left = flyObstacleLeft + 'px';
+    }
+  }, 20);
 
-            // Append the obstacle to the game container
-            document.getElementById('game').appendChild(newObstacle);
+  flyTimerId = setTimeout(moveFlyObstacle, Math.random() * 3000 + 2000);
+}
 
-            // Move the obstacle
-            const obstacleMoveTimerId = setInterval(function () {
-                newObstacle.style.left = parseInt(newObstacle.style.left) - 5 + 'px';
+// Function to handle game over
+function gameOver() {
+  clearInterval(obstacleTimerId);
+  clearTimeout(flyTimerId);
+  isGameOver = true;
+  replayButton.style.display = 'block';
+}
 
-                // Check collision with the doghop
-                if (
-                    newObstacle.offsetLeft < doghop.offsetLeft + doghop.offsetWidth &&
-                    newObstacle.offsetLeft + newObstacle.offsetWidth > doghop.offsetLeft &&
-                    newObstacle.offsetTop < doghop.offsetTop + doghop.offsetHeight &&
-                    newObstacle.offsetTop + newObstacle.offsetHeight > doghop.offsetTop
-                ) {
-                    gameOver();
-                }
-
-                // Remove the obstacle when it goes off the screen
-                if (newObstacle.offsetLeft < -50) {
-                    newObstacle.remove();
-                    clearInterval(obstacleMoveTimerId);
-                }
-            }, 20);
-        }
-
-        // Function to handle game over
-        function gameOver() {
-            clearInterval(obstacleTimerId);
-            isGameOver = true;
-            document.body.innerHTML = '<h1 class="game-over">Game Over</h1><p class="score">Score: ' + score + '</p>';
-        }
-
-        // Function to start the game
-        function startGame() {
-            isGameOver = false;
-            score = 0;
-            doghopBottom = 0;
-            doghop.style.bottom = doghopBottom + 'px';
-            startScreen.style.display = 'none';
-            gameContainer.style.display = 'block';
-            moveObstacle();
-        }
-
-        // Event listener for keydown event to make the doghop jump or crouch
-        document.addEventListener('keydown', function (event) {
-            if (isGameOver) return;
-
-            if (event.code === 'Space') {
-                jump();
-            } else if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
-                crouch();
-            }
-        });
-
-        // Event listener for replay button click
-        replayButton.addEventListener('click', function () {
-            startGame();
-        });
-           
+// Function to reset the game
+function resetGame() {
+  isGameOver = false;
+  isJumping = false;
+  isCrouching = false;
+  doghopBottom = 0;
+  doghop.style.bottom = doghopBottom +
