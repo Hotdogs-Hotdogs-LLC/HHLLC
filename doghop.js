@@ -100,11 +100,11 @@ function moveFlyObstacle() {
 
   const flyObstacle = document.createElement('div');
   flyObstacle.classList.add('fly-obstacle');
-  flyObstacle.style.top = flyObstacleTop + 'px';
+  flyObstacle.style.top = flyObstacleTop + 'px
   flyObstacle.style.left = flyObstacleLeft + 'px';
   gameContainer.appendChild(flyObstacle);
 
-    let flyInterval = setInterval(function () {
+  let flyInterval = setInterval(function () {
     if (flyObstacleLeft < -50) {
       clearInterval(flyInterval);
       flyObstacle.remove();
@@ -125,7 +125,7 @@ function moveFlyObstacle() {
 }
 
 function gameOver() {
-  clearTimeout(flyTimerId);
+  clearInterval(flyTimerId);
   isGameOver = true;
   replayButton.style.display = 'block';
 }
