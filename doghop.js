@@ -7,7 +7,6 @@ let isJumping = false;
 let isGameOver = false;
 let isCrouching = false;
 let doghopBottom = 0;
-let gravity = 5;
 let flyTimerId;
 
 gameContainer.style.backgroundColor = 'black';
@@ -108,7 +107,17 @@ function moveFlyObstacle() {
     if (flyObstacleLeft < -50) {
       clearInterval(flyInterval);
       flyObstacle.remove();
-    } else
+    } else if (
+      flyObstacleLeft > 0 &&
+      flyObstacleLeft < 50 &&
+      doghopBottom < flyObstacleTop + 150 &&
+      !isCrouching
+    ) {
+      gameOver();
+    } else {
+      flyObstacleLeft -= 5;
+      flyObstacle.style.left = flyObstacleLeft + 'px';
+    }
   }, 20);
 
   flyTimerId = setTimeout(moveFlyObstacle, Math.random() * 3000 + 2000);
@@ -161,3 +170,4 @@ replayButton.addEventListener('click', function () {
 window.addEventListener('load', function () {
   startScreen.style.display = 'block';
 });
+
