@@ -1,12 +1,8 @@
-// JavaScript code
-
-// Get references to game elements
 const gameContainer = document.getElementById('game-container');
 const doghop = document.getElementById('doghop');
 const replayButton = document.getElementById('replay-button');
 const startScreen = document.getElementById('start-screen');
 
-// Initialize game variables
 let isJumping = false;
 let isGameOver = false;
 let isCrouching = false;
@@ -15,39 +11,32 @@ let gravity = 5;
 let obstacleTimerId;
 let flyTimerId;
 
-// Adjust the game container's CSS display and background-color properties
 gameContainer.style.backgroundColor = 'black';
 
-// Adjust the game container's CSS display property
 gameContainer.style.display = 'none';
 
-// Define the start button
 const startButton = document.getElementById('start-button');
 
-// Function to start the game
 function startGame() {
     if (isGameOver) return;
 
-    // Hide the start screen
+   
     startScreen.style.display = 'none';
 
-    // Show the game container
+   
     gameContainer.style.display = 'flex';
 
     moveObstacle();
     
-        // Move the flying obstacle
+       
     moveFlyObstacle();
 }
 
-// Event listener for start button click
 startButton.addEventListener('click', startGame);
 
-// Adjust the game container's CSS display property
 gameContainer.style.display = 'none';
 
 
-// Function to make the doghop jump
 function jump() {
   if (isJumping || isCrouching) return;
 
@@ -71,7 +60,6 @@ function jump() {
   }, 10);
 }
 
-// Function to make the doghop crouch
 function crouch() {
   if (isJumping) return;
 
@@ -90,7 +78,6 @@ function crouch() {
   }
 }
 
-// Function to move the obstacle
 function moveObstacle() {
   let obstacleLeft = window.innerWidth;
 
@@ -117,7 +104,6 @@ function moveObstacle() {
   }, 20);
 }
 
-// Function to move the flying obstacle
 function moveFlyObstacle() {
   let flyObstacleTop = Math.random() * (window.innerHeight - 150);
   let flyObstacleLeft = window.innerWidth;
@@ -148,7 +134,6 @@ function moveFlyObstacle() {
   flyTimerId = setTimeout(moveFlyObstacle, Math.random() * 3000 + 2000);
 }
 
-// Function to handle game over
 function gameOver() {
   clearInterval(obstacleTimerId);
   clearTimeout(flyTimerId);
@@ -156,7 +141,6 @@ function gameOver() {
   replayButton.style.display = 'block';
 }
 
-// Function to reset the game
 function resetGame() {
   isGameOver = false;
   isJumping = false;
@@ -167,7 +151,6 @@ function resetGame() {
   replayButton.style.display = 'none';
 }
 
-// Event listener for keydown events
 document.addEventListener('keydown', function (event) {
   if (event.code === 'Space') {
     if (!isGameOver) {
@@ -183,7 +166,6 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-// Event listener for keyup events
 document.addEventListener('keyup', function (event) {
   if (event.code === 'ArrowDown') {
     if (!isGameOver) {
@@ -192,13 +174,11 @@ document.addEventListener('keyup', function (event) {
   }
 });
 
-// Event listener for replay button click
 replayButton.addEventListener('click', function () {
   resetGame();
   startGame();
 });
 
-// Start the game on window load
 window.addEventListener('load', function () {
   startScreen.style.display = 'block';
 });
