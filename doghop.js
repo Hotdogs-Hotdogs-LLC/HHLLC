@@ -62,15 +62,16 @@ function createGroundObstacle() {
     newObstacle.style.left = parseInt(newObstacle.style.left) - 5 + 'px'; // Adjust the speed as needed
 
     // Check collision with the doghop
-    if (
-      newObstacle.offsetLeft < doghop.offsetLeft + doghop.offsetWidth &&
-      newObstacle.offsetLeft + newObstacle.offsetWidth > doghop.offsetLeft &&
-      newObstacle.offsetTop + newObstacle.offsetHeight > doghop.offsetTop &&
-      newObstacle.offsetTop < doghop.offsetTop + doghop.offsetHeight &&
-      doghopBottom >= 0
-    ) {
-      gameOver();
-    }
+if (
+  newObstacle.offsetLeft < doghop.offsetLeft + doghop.offsetWidth &&
+  newObstacle.offsetLeft + newObstacle.offsetWidth > doghop.offsetLeft &&
+  newObstacle.offsetTop + newObstacle.offsetHeight > doghop.offsetTop &&
+  newObstacle.offsetTop < doghop.offsetTop + doghop.offsetHeight &&
+  doghopBottom + doghop.offsetHeight >= newObstacle.offsetTop
+) {
+  gameOver();
+}
+
 
     // Remove the obstacle when it goes off the screen
     if (newObstacle.offsetLeft < -50) {
