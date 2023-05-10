@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', function() {
+
 // Get references to game elements
 const doghop = document.getElementById('doghop');
 const scoreElement = document.getElementById('score');
@@ -77,3 +79,4 @@ function createGroundObstacle() {
     }
   }, 20);
 }
+});
