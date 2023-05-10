@@ -101,17 +101,12 @@ function startGame() {
         }
 
         // Event listener for keydown event to make the doghop jump
-        document.addEventListener('keydown', function(event) {
-            if (event.code === 'Space' || event.code === 'ArrowUp') {
-                startGame();
-                jump();
-            }
-        });
-
-        // Event listener to start the game when the screen is clicked
-        document.addEventListener('click', function() {
-            startGame();
-        });
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'ArrowUp' || event.keyCode === 38) {
+        startGame();
+        jump();
+    }
+});
 
         // Start the game when the page is loaded
         window.onload = startGame;
