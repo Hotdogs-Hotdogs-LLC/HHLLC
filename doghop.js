@@ -39,20 +39,22 @@ function jump() {
 }
 
 // Function to move the obstacles
-function moveObstacle() {
+function moveObstacles() {
     let initialDelay = Math.random() * 4000 + 2000; 
     obstacleTimerId = setTimeout(function() {
         createObstacle();
+        createFlyingObstacle();
         obstacleTimerId = setTimeout(createObstacle, 3000);
     }, initialDelay);
 }
+
 
 // Function to create an obstacle
 function createObstacle() {
     const newObstacle = document.createElement('div');
     newObstacle.classList.add('obstacle');
     newObstacle.style.left = '500px';
-
+    
     // Append the obstacle to the game container
     document.getElementById('game').appendChild(newObstacle);
 
@@ -77,6 +79,37 @@ function createObstacle() {
         }
     }, 20);
 
+    function createFlyingObstacle() {
+    const newFlyingObstacle = document.createElement('div');
+    newFlyingObstacle.classList.add('flying-obstacle');
+    newFlyingObstacle.style.left = '500px';
+
+    // Append the flying obstacle to the game container
+    document.getElementById('game').appendChild(newFlyingObstacle);
+
+    // Move the flying obstacle
+    const flyingObstacleMoveTimerId = setInterval(function() {
+        newFlyingObstacle.style.left = parseInt(newFlyingObstacle.style.left) - 5 + 'px'; // Adjust the speed as needed
+
+        // Check collision with the doghop
+        if (
+            newFlyingObstacle.offsetLeft < doghop.offsetLeft + doghop.offsetWidth &&
+            newFlyingObstacle.offsetLeft + newFlyingObstacle.offsetWidth > doghop.offsetLeft &&
+            newFlyingObstacle.offsetTop < doghop.offsetTop + doghop.offsetHeight &&
+            newFlyingObstacle.offsetTop + newFlyingObstacle.offsetHeight > doghop.offsetTop
+        ) {
+            gameOver();
+        }
+
+        // Remove the flying obstacle when it goes off the screen
+        if (newFlyingObstacle.offsetLeft < -50) {
+            newFlyingObstacle.remove();
+            clearInterval(flyingObstacleMoveTimerId);
+        }
+    }, 20);
+}
+
+    
     // Update the score when the obstacle passes successfully
     const scoreTimerId = setInterval(function() {
         if (!isGameOver) {
@@ -97,7 +130,7 @@ function gameOver() {
 function startGame() {
     if (isGameOver) return
 
-            moveObstacle();
+            moveObstacles();
         }
 
         // Event listener for keydown event to make the doghop jump
