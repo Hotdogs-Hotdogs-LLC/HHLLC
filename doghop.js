@@ -62,14 +62,15 @@ function createGroundObstacle() {
 
     // Check collision with the doghop
 if (
-  newObstacle.offsetLeft < doghop.offsetLeft + doghop.offsetWidth &&
-  newObstacle.offsetLeft + newObstacle.offsetWidth > doghop.offsetLeft &&
-  newObstacle.offsetTop + newObstacle.offsetHeight > doghop.offsetTop &&
-  newObstacle.offsetTop < doghop.offsetTop + doghop.offsetHeight &&
-  doghopBottom <= newObstacle.offsetHeight
+  newFlyingObstacle.offsetLeft < doghop.offsetLeft + doghop.offsetWidth &&
+  newFlyingObstacle.offsetLeft + newFlyingObstacle.offsetWidth > doghop.offsetLeft &&
+  newFlyingObstacle.offsetTop < doghop.offsetTop + doghop.offsetHeight &&
+  newFlyingObstacle.offsetTop + newFlyingObstacle.offsetHeight > doghop.offsetTop &&
+  doghopBottom <= newFlyingObstacle.offsetTop + newFlyingObstacle.offsetHeight
 ) {
   gameOver();
 }
+
 
 
     // Remove the obstacle when it goes off the screen
@@ -95,14 +96,16 @@ function createFlyingObstacle() {
         parseInt(newFlyingObstacle.style.left) - 5 + 'px'; // Adjust the speed as needed
 
       // Check collision with the doghop
-      if (
-        newFlyingObstacle.offsetLeft < doghop.offsetLeft + doghop.offsetWidth &&
-        newFlyingObstacle.offsetLeft + newFlyingObstacle.offsetWidth > doghop.offsetLeft &&
-        newFlyingObstacle.offsetTop < doghop.offsetTop + doghop.offsetHeight &&
-        newFlyingObstacle.offsetTop + newFlyingObstacle.offsetHeight > doghop.offsetTop
-      ) {
-        gameOver();
-      }
+if (
+  newFlyingObstacle.offsetLeft < doghop.offsetLeft + doghop.offsetWidth &&
+  newFlyingObstacle.offsetLeft + newFlyingObstacle.offsetWidth > doghop.offsetLeft &&
+  newFlyingObstacle.offsetTop < doghop.offsetTop + doghop.offsetHeight &&
+  newFlyingObstacle.offsetTop + newFlyingObstacle.offsetHeight > doghop.offsetTop &&
+  doghopBottom <= newFlyingObstacle.offsetTop + newFlyingObstacle.offsetHeight
+) {
+  gameOver();
+}
+
 
       // Remove the flying obstacle when it goes off the screen
       if (newFlyingObstacle.offsetLeft < -50) {
