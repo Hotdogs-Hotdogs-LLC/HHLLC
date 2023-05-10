@@ -107,14 +107,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Move obstacles
     moveObstacles();
-// Function to handle the jump action
-function handleJump(event) {
-  if (event.code === 'Space' && !isJumping && !isGameOver) {
-    jump();
+  // Function to handle the jump action
+  function handleJump(event) {
+    if (event.code === 'Space' && !isJumping && !isGameOver) {
+      jump();
+    }
   }
-}
+
+  // Function to start the game
+  function startGame() {
+    // Reset game variables
+    isJumping = false;
+    isGameOver = false;
+    doghopBottom = 0;
+    score = 0;
+    scoreElement.textContent = score;
+
+    // Remove existing obstacles
+    const obstacles = document.querySelectorAll('.obstacle');
+    obstacles.forEach(obstacle => obstacle.remove());
+
+    // Move obstacles
+    moveObstacles();
+  }
+
+  // Rest of the code...
+
+  // Call the startGame function to begin the game
+  startGame();
+  }
+  // Add event listener for jump action
+  document.addEventListener('keydown', handleJump);
 });
-
-// Call the startGame function to begin the game
-startGame();
-
