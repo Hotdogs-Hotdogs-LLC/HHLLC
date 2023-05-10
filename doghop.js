@@ -1,5 +1,6 @@
 // JavaScript code
 
+
 // Get references to game elements
 const doghop = document.getElementById('doghop');
 const obstacle = document.getElementById('obstacle');
