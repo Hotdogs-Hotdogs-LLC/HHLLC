@@ -79,35 +79,43 @@ function createObstacle() {
 }
 
 // Function to create a flying obstacle
-function createFlyingObstacle() {
-  const newFlyingObstacle = document.createElement('div');
-  newFlyingObstacle.classList.add('flying-obstacle');
-  newFlyingObstacle.style.left = '500px';
+function createObstacle() {
+  const newObstacle = document.createElement('div');
+  newObstacle.classList.add('obstacle');
+  newObstacle.style.left = '500px';
 
-  // Append the flying obstacle to the game container
-  document.getElementById('game').appendChild(newFlyingObstacle);
+  // Append the obstacle to the game container
+  document.getElementById('game').appendChild(newObstacle);
 
-// Move the flying obstacle
-    const flyingObstacleMoveTimerId = setInterval(function () {
-      newFlyingObstacle.style.left =
-        parseInt(newFlyingObstacle.style.left) - 5 + 'px'; // Adjust the speed as needed
+  // Move the obstacle
+  const obstacleMoveTimerId = setInterval(function () {
+    newObstacle.style.left =
+      parseInt(newObstacle.style.left) - 5 + 'px'; // Adjust the speed as needed
 
-      // Check collision with the doghop
-      if (
-        newFlyingObstacle.offsetLeft < doghop.offsetLeft + doghop.offsetWidth &&
-        newFlyingObstacle.offsetLeft + newFlyingObstacle.offsetWidth > doghop.offsetLeft &&
-        newFlyingObstacle.offsetTop < doghop.offsetTop + doghop.offsetHeight &&
-        newFlyingObstacle.offsetTop + newFlyingObstacle.offsetHeight > doghop.offsetTop
-      ) {
-        gameOver();
-      }
+    // Check collision with the doghop
+    if (
+      newObstacle.offsetLeft < doghop.offsetLeft + doghop.offsetWidth &&
+      newObstacle.offsetLeft + newObstacle.offsetWidth > doghop.offsetLeft &&
+      newObstacle.offsetTop + newObstacle.offsetHeight > doghop.offsetTop &&
+      newObstacle.offsetTop < doghop.offsetTop + doghop.offsetHeight
+    ) {
+      gameOver();
+    }
 
-      // Remove the flying obstacle when it goes off the screen
-      if (newFlyingObstacle.offsetLeft < -50) {
-        newFlyingObstacle.remove();
-        clearInterval(flyingObstacleMoveTimerId);
-      }
-    }, 20);
+    // Remove the obstacle when it goes off the screen
+    if (newObstacle.offsetLeft < -50) {
+      newObstacle.remove();
+      clearInterval(obstacleMoveTimerId);
+    }
+  }, 20);
+
+  // Update the score when the obstacle passes successfully
+  const scoreTimerId = setInterval(function () {
+    if (!isGameOver) {
+      score++;
+      scoreElement.textContent = 'Score: ' + score;
+    }
+  }, 100);
 }
 
 // Function to end the game
