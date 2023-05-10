@@ -68,16 +68,16 @@ body {
 .obstacle {
     position: absolute;
     bottom: 0;
-    width: 20px;
-    height: 20px;
+    width: 29px;
+    height: 29px;
     background: url('obstacle.png') no-repeat center;
     background-size: contain;
 }
 
 .flying-obstacle {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 22x;
+    height: 13px;
     background-image: url('flyingobstacle.png'); /* Replace with the correct path to your flying obstacle image */
     background-size: cover;
     bottom: 100px; /* Adjust the position as needed */
