@@ -1,6 +1,5 @@
 // JavaScript code
 
-
 // Get references to game elements
 const doghop = document.getElementById('doghop');
 const obstacle = document.getElementById('obstacle');
@@ -28,7 +27,7 @@ function jump() {
                     clearInterval(fallInterval);
                     isJumping = false;
                 } else {
-                    doghopBottom -= 1;  // Adjust the speed at which the doghop comes down (e.g., from 2 to 5)
+                    doghopBottom -= 2.5;  // Adjust the speed at which the doghop comes down (e.g., from 2 to 5)
                     doghop.style.bottom = doghopBottom + 'px';
                 }
             }, 10);  // Adjust the interval (e.g., from 20 to 10)
@@ -97,3 +96,22 @@ function gameOver() {
 // Function to start the game
 function startGame() {
     if (isGameOver) return
+
+            moveObstacle();
+        }
+
+        // Event listener for keydown event to make the doghop jump
+        document.addEventListener('keydown', function(event) {
+            if (event.code === 'Space' || event.code === 'ArrowUp') {
+                startGame();
+                jump();
+            }
+        });
+
+        // Event listener to start the game when the screen is clicked
+        document.addEventListener('click', function() {
+            startGame();
+        });
+
+        // Start the game when the page is loaded
+        window.onload = startGame;
