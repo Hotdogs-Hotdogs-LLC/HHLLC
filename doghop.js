@@ -35,14 +35,17 @@ function jump() {
 }
 
 // Function to move the obstacles
+let obstacleTimeoutId; // Declare a new variable for the timeout id
 function moveObstacles() {
   let initialDelay = Math.random() * 4000 + 2000;
-  obstacleTimerId = setTimeout(function () {
+  obstacleTimeoutId = setTimeout(function () {
     createGroundObstacle();
     createFlyingObstacle();
-    obstacleTimerId = setTimeout(moveObstacles, 3000);
+    obstacleTimeoutId = undefined; // Clear the timeout id
+    moveObstacles(); // Set a new timeout after creating the obstacles
   }, initialDelay);
 }
+
 
 // Function to create a ground obstacle
 function createGroundObstacle() {
