@@ -5,6 +5,27 @@
         <meta charset="UTF-8"> 
         <title>Hotdogs Hotdogs LLC</title> 
         <link rel="stylesheet" type="text/css" href="hhllc.css"> 
+          <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    .content {
+      width: 60%;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .content {
+        width: 100%;
+      }
+    }
+  </style>
     </head>
     <body> 
         <nav> 
@@ -28,12 +49,17 @@
                 <li><a href="careers.html">CAREERS</a></li> 
                 <li><a href="investors.html">INVESTORS</a></li> 
             </ul>
-
             <img id="menu" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu" src="hotdog.png" alt="">
         </nav> 
+        
+          <div class="container">
+    <div class="content">
+      <p>This is our current location, but if you have a better idea for a location please email us!</p>
+    </div>
         <section> 
             <img src="PAGE UNDER CONST-02.png" width="100%" alt=""/>
-        </section> 
+        </section>
+        </div>
         
 <section id="h.75438d7e0faa54b2_57" class="yaqOZd" style="width: 40%; margin: 0 auto;">
   <div class="IFuOkc"></div>
