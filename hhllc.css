@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <title>Hotdogs Hotdogs LLC</title>
-    <style>
-        /* CSS styles */
-
-        @font-face {
+       @font-face {
             font-family: "Gotham-Bold";
             src: url("Gotham-Bold.ttf") format('truetype');
         }
