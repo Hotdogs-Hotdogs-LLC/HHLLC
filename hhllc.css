@@ -37,7 +37,7 @@
             .menu-btn {
                 display: block;
             }
-
+}
 #nav-links {
     position: fixed;
     max-height: 100vh;
