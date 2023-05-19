@@ -39,7 +39,7 @@
             }
 }
 #nav-links {
-    position: fixed;
+    position: absolute;
     max-height: 100vh;
     width: max-content; /* Adjust the width based on the content */
     background-color: maroon;
@@ -115,7 +115,7 @@
             }
 
             .nav-links.show {
-                display: flex;
+                display: block;
                 flex-direction: column;
             }
 
