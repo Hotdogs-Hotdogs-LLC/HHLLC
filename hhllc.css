@@ -41,12 +41,13 @@
 #nav-links {
     position: absolute;
     max-height: 100vh;
-    width: max-content; /* Adjust the width based on the content */
+    width: 100%;
     background-color: maroon;
     top: 0;
     left: 0;
     padding-top: 40px;
-    margin-top: 0px;
+    margin-top: 50%;
+    transform: translateY(-50%);
     display: none;
     text-align: center;
 }
