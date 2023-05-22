@@ -8,19 +8,20 @@
     src: url("Gotham-Black.ttf") format("truetype");
 }
 
-h1 {text-align: center;}
-p {text-align: center;}
-div {text-align: center;}
+h1, p, div {
+    text-align: center;
+}
+
 body {
     background-color: #990000;
     font-family: Gotham-Bold;
     margin: 0;
     padding: 0;
-    color:#FFD900;
+    color: #FFD900;
 }
 
 section {
-   margin:15px;
+    margin: 15px;
 }
 
 nav {
@@ -96,6 +97,10 @@ nav ul li ul li:hover > a {
     background-color: maroon;
 }
 
+.menu-btn {
+    display: none;
+}
+
 @media screen and (max-width: 767px) {
     .desktop-nav {
         display: none;
@@ -107,9 +112,50 @@ nav ul li ul li:hover > a {
 
     .menu-btn {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        width: 30px;
+        height: 20px;
+        margin-top: 20px;
+        margin-right: 20px;
     }
 
-    .nav-links {
+    .menu-btn__burger,
+    .menu-btn__burger::before,
+    .menu-btn__burger::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: #FFD900;
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .menu-btn__burger::before {
+        transform: translateY(-7px);
+    }
+
+    .menu-btn__burger::after {
+        transform: translateY(7px);
+    }
+
+    .menu-btn.open .menu-btn__burger {
+        transform: rotate(45deg);
+        background-color: transparent;
+    }
+
+    .menu-btn.open .menu-btn__burger::before {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-btn.open .menu-btn__burger::after {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .mobile-nav-links {
         position: fixed;
         max-height: 100vh;
         width: 100%;
@@ -123,13 +169,13 @@ nav ul li ul li:hover > a {
         text-align: center;
     }
 
-    .nav-links li {
+    .mobile-nav-links li {
         display: block;
         margin: 10px 0;
         line-height: 10px;
     }
 
-    .nav-links a {
+    .mobile-nav-links a {
         font-size: 20px;
         font-weight: bold;
         letter-spacing: 2px;
@@ -137,47 +183,6 @@ nav ul li ul li:hover > a {
         text-transform: uppercase;
         transition: all 0.5s ease;
         padding: 10px;
-    }
-
-    .menu-btn__burger {
-        width: 30px;
-        height: 20px;
-        position: relative;
-        margin-top: 10px;
-        margin-right: 10px;
-    }
-
-    .menu-btn__burger::before,
-    .menu-btn__burger::after {
-        content: "";
-        position: absolute;
-        background-color: #fff;
-        width: 100%;
-        height: 2px;
-        left: 0;
-        transition: all 0.5s ease;
-    }
-
-    .menu-btn__burger::before {
-        top: -6px;
-    }
-
-    .menu-btn__burger::after {
-        bottom: -6px;
-    }
-
-    .menu-btn.open .menu-btn__burger::before {
-        transform: rotate(45deg);
-        top: 0;
-    }
-
-    .menu-btn.open .menu-btn__burger::after {
-        transform: rotate(-45deg);
-        bottom: 0;
-    }
-
-    .menu-btn.open .menu-btn__burger {
-        background-color: transparent;
     }
 
     .nav-links.show {
