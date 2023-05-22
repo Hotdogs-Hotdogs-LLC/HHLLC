@@ -1,189 +1,289 @@
 @font-face {
-    font-family: "Gotham-Bold";
-    src: url("Gotham-Bold.ttf") format('truetype');
+  font-family: "Gotham-Bold";
+  src: url("Gotham-Bold.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "Gotham-Black";
-    src: url("Gotham-Black.ttf") format("truetype");
-}
-
-h1, p, div {
-    text-align: center;
+  font-family: "Gotham-Black";
+  src: url("Gotham-Black.ttf") format("truetype");
 }
 
 body {
-    background-color: #990000;
-    font-family: Gotham-Bold;
-    margin: 0;
-    padding: 0;
-    color: #FFD900;
+  background-color: #990000;
+  font-family: "Gotham-Bold.ttf", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-section {
-    margin: 15px;
+@media screen and (min-width: 768px) {
+  .menu-btn {
+    display: none;
+  }
 }
+
+@media screen and (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+  .nav-links {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: #212121;
+    top: 0;
+    left: 0;
+    padding-top: 80px;
+    display: none;
+    text-align: center;
+  }
+  .nav-links li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  .nav-links a {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    padding: 20px;
+  }
+  .menu-btn__burger {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  .menu-btn__burger::before,
+  .menu-btn__burger::after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.5s ease;
+  }
+  .menu-btn__burger::before {
+    top: -6px;
+  }
+  .menu-btn__burger::after {
+    bottom: -6px;
+  }
+  .menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  .menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
+  .menu-btn.open .menu-btn__burger {
+    background-color: transparent;
+  }
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+/* Hamburger Icon */
+.menu-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.menu-btn__burger {
+  width: 20px;
+  height: 2px;
+  background-color: #FFD900;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #FFD900;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-btn__burger::before {
+  transform: translateY(-7px);
+}
+
+.menu-btn__burger::after {
+  transform: translateY(7px);
+}
+
+/* Hamburger Icon Animation */
+.menu-btn.open .menu-btn__burger {
+  transform: rotate(45deg);
+  background-color: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+}
+
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: maroon;
-    font-family: "Gotham-Bold";
-    color: #FFD900;
-    height: 60px;
-    padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: maroon;
+  font-family: "Gotham-Bold", sans-serif;
+  height: 60px;
+  padding: 10px;
 }
 
 .logo {
-    height: 40px;
-    width: 10%;
-    background-color: transparent;
+  height: 40px;
+  width: 10%;
+  background-color: clear;
 }
 
 nav ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
-    position: relative;
+  position: relative;
 }
 
 nav ul li a {
-    display: block;
-    padding: 10px;
-    color: #FFD900;
-    text-decoration: none;
+  display: block;
+  padding: 10px;
+  color: #FFD900;
+  text-decoration: none;
 }
 
 nav ul li a:hover {
-    color: salmon;
+  color: salmon;
 }
 
 nav ul li ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: none;
+  padding: 0;
+  margin: 0;
+  background-color: maroon;
+}
+
+nav ul li ul li {
+  width: 100%;
+}
+
+nav ul li ul li a {
+  padding: 10px;
+  color: #FFD900;
+}
+
+nav ul li:hover > a {
+  background-color: maroon;
+}
+
+nav ul li:hover > a + ul {
+  display: block;
+}
+
+nav ul li ul li:hover > a {
+  background-color: maroon;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Navbar */
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 0;
+    position: relative;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: #FFD900;
+  }
+
+  nav ul li:hover > a {
+    background-color: maroon;
+  }
+
+  nav ul li ul {
+    background-color: maroon;
+    display: block;
+    margin: 0;
+    padding: 0;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    display: none;
-    padding: 15px 0px;
-    margin: 0;
-    background-color: #990000;
-}
+  }
 
-nav ul li ul li {
+  nav ul li ul li {
     width: 100%;
-}
+  }
 
-nav ul li ul li a {
-    padding: 10px;
+  nav ul li ul li a {
     color: #FFD900;
-}
+    padding: 10px;
+  }
 
-nav ul li:hover > a {
+  nav ul li ul li:hover > a {
     background-color: maroon;
-}
-
-nav ul li:hover > a + ul {
-    display: block;
-}
-
-@media screen and (max-width: 767px) {
-    .desktop-nav {
-        display: none;
-    }
-
-    .mobile-nav {
-        display: block;
-    }
-
-    .menu-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        cursor: pointer;
-        width: 30px;
-        height: 20px;
-        margin-top: 20px;
-        margin-right: 20px;
-        visibility: hidden; /* Hide the hamburger icon on desktop */
-    }
-
-    .menu-btn__burger,
-    .menu-btn__burger::before,
-    .menu-btn__burger::after {
-        content: "";
-        position: absolute;
-        width: 20px;
-        height: 2px;
-        background-color: #FFD900;
-        border-radius: 2px;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .menu-btn__burger::before {
-        transform: translateY(-7px);
-    }
-
-    .menu-btn__burger::after {
-        transform: translateY(7px);
-    }
-
-    .menu-btn.open .menu-btn__burger {
-        transform: rotate(45deg);
-        background-color: transparent;
-    }
-
-    .menu-btn.open .menu-btn__burger::before {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .menu-btn.open .menu-btn__burger::after {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    .mobile-nav-links {
-        position: fixed;
-        max-height: 100vh;
-        width: 100%;
-        background-color: maroon;
-        top: 60px;
-        left: 0;
-        padding-top: 40px;
-        margin-top: 80px;
-        transform: translateY(-50%);
-        display: none;
-        text-align: center;
-    }
-
-    .mobile-nav-links li {
-        display: block;
-        margin: 10px 0;
-        line-height: 10px;
-    }
-
-    .mobile-nav-links a {
-        font-size: 20px;
-        font-weight: bold;
-        letter-spacing: 2px;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: all 0.5s ease;
-        padding: 10px;
-    }
-
-    .nav-links.show {
-        display: block;
-        flex-direction: column;
-    }
-
-    nav ul li ul {
-        display: block;
-    }
+  }
+  
+  /* Sections */
+  section {
+    padding: 25px;
+  }
 }
