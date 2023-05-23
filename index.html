@@ -30,7 +30,7 @@
         <li><a href="investors.html">INVESTORS</a></li>
     </ul>
 
-    <img id="menu" class="menu-btn" onclick="toggle_menu()" aria-label="Main Menu" src="hotdog.png" alt="">
+    <img id="menu" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu" src="hotdog.png" alt="">
 </nav>
         
         </br>
