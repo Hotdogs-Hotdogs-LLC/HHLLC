@@ -1,221 +1,211 @@
-        @font-face {
-            font-family: "Gotham-Bold";
-            src: url("Gotham-Bold.ttf") format('truetype');
-        }
-        @font-face {
-            font-family: "Gotham-Black";
-            src: url("Gotham-Black.ttf") format("truetype");
-        }
+@font-face {
+    font-family: "Gotham-Bold";
+    src: url("Gotham-Bold.ttf") format('truetype');
+}
 
-        h1, p, div {
-            text-align: center;
-        }
+@font-face {
+    font-family: "Gotham-Black";
+    src: url("Gotham-Black.ttf") format("truetype");
+}
 
-        body {
-            background-color: #990000;
-            font-family: Gotham-Bold;
-            margin: 0;
-            padding: 0;
-            color: #FFD900;
-        }
+h1,
+p,
+div {
+    text-align: center;
+}
 
-        #nav-links {
-            display: none;
-        }
+body {
+    background-color: #990000;
+    font-family: Gotham-Bold;
+    margin: 0;
+    padding: 0;
+    color: #FFD900;
+}
 
-        section {
-            margin: 15px;
-        }
+section {
+    margin: 15px;
+}
 
-        .menu-btn {
-            display: none;
-        }
+.menu-btn {
+    display: none;
+}
 
-        .nav-links.show {
-            display: block;
-        }
+.nav-links.show {
+    display: block;
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: maroon;
-            font-family: "Gotham-Bold";
-            color: #FFD900;
-            height: 60px;
-            padding: 10px;
-        }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: maroon;
+    font-family: "Gotham-Bold";
+    color: #FFD900;
+    height: 60px;
+    padding: 10px;
+}
 
-        .logo {
-            height: 40px;
-            width: 10%;
-            background-color: transparent;
-        }
+.logo {
+    height: 40px;
+    width: 10%;
+    background-color: transparent;
+}
 
-        nav ul {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
 
-        nav ul li {
-            position: relative;
-        }
+nav ul li {
+    position: relative;
+}
 
-        nav ul li a {
-            display: block;
-            padding: 10px;
-            color: #FFD900;
-            text-decoration: none;
-        }
+nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #FFD900;
+    text-decoration: none;
+}
 
-        nav ul li a:hover {
-            color: salmon;
-        }
+nav ul li a:hover {
+    color: salmon;
+}
 
-        nav ul li ul {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            display: none;
-            padding: 15px 0px;
-            margin: 0;
-            background-color: #990000;
-        }
+nav ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    padding: 15px 0px;
+    margin: 0;
+    background-color: #990000;
+}
 
-        nav ul li ul li {
-            width: 100%;
-        }
+nav ul li ul li {
+    width: 100%;
+}
 
-        nav ul li ul li a {
-            padding: 10px;
-            color: #FFD900;
-        }
+nav ul li ul li a {
+    padding: 10px;
+    color: #FFD900;
+}
 
-        nav ul li:hover > a {
-            background-color: maroon;
-        }
+nav ul li:hover > a {
+    background-color: maroon;
+}
 
-        nav ul li:hover > a + ul {
-            display: block;
-        }
+nav ul li:hover > a + ul {
+    display: block;
+}
 
-        nav ul li ul li:hover > a {
-            background-color: maroon;
-        }
+nav ul li ul li:hover > a {
+    background-color: maroon;
+}
 
-        .menu-btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            cursor: pointer;
-            width: 30px;
-            height: 20px;
-            margin-top: 20px;
-            margin-right: 20px;
-        }
+.menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
 
-        .menu-btn__burger {
-            width: 100%;
-            height: 2px;
-            background-color: #FFD900;
-            border-radius: 2px;
-            transition: all 0.3s ease-in-out;
-        }
+.menu-btn__burger {
+    width: 100%;
+    height: 2px;
+    background-color: #FFD900;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
 
-        .menu-btn__burger::before,
-        .menu-btn__burger::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: #FFD900;
-            border-radius: 2px;
-            transition: all 0.3s ease-in-out;
-        }
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #FFD900;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
 
-        .menu-btn__burger::before {
-            transform: translateY(-7px);
-        }
+.menu-btn__burger::before {
+    transform: translateY(-7px);
+}
 
-        .menu-btn__burger::after {
-            transform: translateY(7px);
-        }
+.menu-btn__burger::after {
+    transform: translateY(7px);
+}
 
-        .menu-btn.open .menu-btn__burger {
-            transform: rotate(45deg);
-            background-color: transparent;
-        }
+.menu-btn.open .menu-btn__burger {
+    transform: rotate(45deg);
+    background-color: transparent;
+}
 
-        .menu-btn.open .menu-btn__burger::before {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
 
-        .menu-btn.open .menu-btn__burger::after {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
 
-        @media screen and (max-width: 768px) {
-            .menu-btn {
-                display: flex;
-            }
+@media screen and (max-width: 768px) {
+    .menu-btn {
+        display: flex;
+    }
 
-            #nav-links {
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: maroon;
-                padding-top: 10px;
-            }
+    #nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: maroon;
+        padding-top: 10px;
+    }
 
-            #nav-links.show {
-                display: block;
-            }
+    #nav-links.show {
+        display: block;
+    }
 
-            #nav-links li {
-                margin: 10px 0;
-                line-height: 10px;
-            }
+    #nav-links li {
+        margin: 10px 0;
+        line-height: 10px;
+    }
 
-            #nav-links a {
-                font-size: 20px;
-                font-weight: bold;
-                letter-spacing: 2px;
-                text-decoration: none;
-                text-transform: uppercase;
-                transition: all 0.5s ease;
-                padding: 10px;
-                color: #FFD900;
-            }
+    #nav-links a {
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 0.5s ease;
+        padding: 10px;
+        color: #FFD900;
+    }
 
-        #menu {
-            display: none;
-        }
-        
-        @media (max-width: 768px) {
-            #nav-links {
-                display: none;
-            }
-            
-            #menu {
-                display: inline-block;
-                width: 30px;
-                height: 30px;
-                cursor: pointer;
-            }
-            
-            #menu img {
-                width: 100%;
-                height: auto;
-            }
-            
-            #sub_menu {
-                display: none;
-            }
-        }
+    #menu {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    #menu img {
+        width: 100%;
+        height: auto;
+    }
+
+    #sub_menu {
+        display: none;
+    }
+}
