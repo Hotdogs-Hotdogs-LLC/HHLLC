@@ -5,29 +5,7 @@
         <meta charset="UTF-8"> 
         <title>Hotdogs Hotdogs LLC</title> 
         <link rel="stylesheet" type="text/css" href="hhllc.css"> 
-         <style>
-.button {
-  background-color: #bd202e;
-  color: yellow;
-  padding: 15px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  margin: 10px;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: #800000;
-}
-</style>
-        <style>
-h1 {text-align: center;}
-p {text-align: center;}
-div {text-align: center;}
+<style>
 ul {text-align: center;}
 </style>
         <style>
@@ -83,10 +61,8 @@ ul {text-align: center;}
         }
     }
 </style>
-
     </head>
     <body> 
-
        <nav>
     <div class="logo">
         <a href="index.html">
@@ -109,7 +85,6 @@ ul {text-align: center;}
         <li><a href="careers.html">CAREERS</a></li>
         <li><a href="investors.html">INVESTORS</a></li>
     </ul>
-
     <img id="menu" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu" src="hotdog.png" alt="">
 </nav>
 
@@ -122,8 +97,9 @@ ul {text-align: center;}
 </br>
 <a href="https://forms.gle/t3qiBH4YkAgLsPS56" target="_blank" class="button">CONTACT US</a>
     </p>
-    </br></br></br></br>
     <h1>CONNECT WITH US</h1>
+    </br></br></br></br>
+
     <table class="center">
     <tr>
         <td>
@@ -163,39 +139,6 @@ ul {text-align: center;}
     </tr>
 </table>
 
-    
-
-        <script>
-
-            function toggle_submenu() {
-                var x = document.getElementById("sub_menu");
-                if (x.style.display === "block") {
-                    x.style.display = "none";
-                } else {
-                    x.style.display = "block";
-                }
-            }
-
-            function toggle_menu() {
-                var x = document.getElementById("nav-links");
-                if (x.style.display === "block") {
-                    x.style.display = "none";
-                    document.getElementById("sub_menu").style.display = "none";
-                } else {
-                    x.style.display = "block";
-                }
-            }
-
-            const hamMenu = document.querySelector('#menu');
-            hamMenu.addEventListener('click', () => {
-                toggle_menu();
-            });
-
-            const subMenu = document.querySelector('#sub_opener');
-            subMenu.addEventListener('click', () => {
-                toggle_submenu();
-            });
-
-        </script>
+ <script src="hhllc.js"></script>
 
     </body> 
