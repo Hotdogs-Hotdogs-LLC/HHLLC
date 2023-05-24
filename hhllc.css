@@ -8,15 +8,9 @@
     src: url("Gotham-Black.ttf") format("truetype");
 }
 
-h1 {
-    text-align: center;
-}
-p {
-    text-align: center;
-}
-div {
-    text-align: center;
-}
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
 
 body {
     background-color: #990000;
@@ -302,6 +296,23 @@ nav ul li ul li:hover > a {
     background-color: maroon;
 }
 
+.button {
+  background-color: #bd202e;
+  color: yellow;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #800000;
+}
 
 /*@media only screen and (max-width: 600px) {
   
