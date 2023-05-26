@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html>
+    <head> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta charset="UTF-8"> 
+        <title>Hotdogs Hotdogs LLC</title> 
+        <link rel="stylesheet" type="text/css" href="hhllc.css"> 
+    </head>
+    <body> 
+
+<nav>
+    <div class="logo">
+        <a href="index.html">
+            <img src="hhllc logo.png" width="100" alt="HHLLC">
+        </a>
+    </div>
+    <ul id="nav-links">
+        <li><a href="location.html">LOCATION</a></li>
+        <li>
+            <a href="media.html">MEDIA</a> <!-- Modified the link for media.html -->
+            <ul id="sub_menu">
+                <li><a href="videos.html">VIDEOS</a></li>
+                <li><a href="music.html">MUSIC</a></li>
+                <li><a href="photos.html">PHOTOS</a></li>
+            </ul>
+        </li>
+        <li><a href="merch.html">MERCH</a></li>
+        <li><a href="advertising.html">ADVERTISING</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="careers.html">CAREERS</a></li>
+        <li><a href="investors.html">INVESTORS</a></li>
+    </ul>
+
+    <img id="menu" onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu" src="hotdog.png" alt="">
+</nav>
+        
+  <h1>THESE ARE NOT SQUIRRELS</h1>
+        
+<table style="width: 60%; margin: 0 auto;">
+  <tr>
+    <td>
+      <img src="TheseAreNotSquirrels.png" alt="TheseAreNotSquirrels" style="width: 100%; display: block; margin-left: auto; margin-right: auto;">
+    </td>
+    <td>
+      <p>"These Are Not Squirrels" is an animated adult comedy series that takes you on uproarious adventures in and around a 3rd-floor apartment with a lively balcony. Join the fearless squirrels, cunning blue jays, and curious iguanas as they explore the great outdoors, while encountering the hilarious antics of two resident cats. With vibrant animation and offbeat humor, this unconventional show promises laughter, surprises, and a wild ride you won't forget.</p>
+    </td>
+  </tr>
+</table>
+
+<style>
+  @media (max-width: 767px) {
+    table {
+      display: block;
+      width: 100%;
+    }
+    td {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+  @media (min-width: 768px) {
+    td {
+      width: 33.33%;
+    }
+  }
+</style>
+
+
+
+
+
+
+<script src="hhllc.js"></script>
+
+    </body> 
+</html> 
